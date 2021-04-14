@@ -7,36 +7,31 @@ import { BitcoinService } from "../bitcoin.service";
   styleUrls: ["./wallet.component.css"]
 })
 export class WalletComponent implements OnInit {
-  action: number;
+  acao: number;
   qt: number;
   total: number;
 
   constructor(public bitcoin: BitcoinService) {}
 
-  ngOnInit() {}
-
   buy() {
     this.validator();
 
-    this.qt = this.qt + this.action;
+    this.qt = this.qt + this.acao;
     this.total = this.qt * this.bitcoin.currentResponse.bpi.BRL.rate_float;
   }
 
   sell() {
     this.validator();
-
-    if (this.qt >= this.action) {
-      this.qt = this.qt - this.action;
+    if (this.qt >= this.acao) {
+      this.qt = this.qt - this.acao;
       this.total = this.qt * this.bitcoin.currentResponse.bpi.BRL.rate_float;
     }
   }
 
   validator() {
-    if (this.qt == null) {
-      this.qt = 0;
-    }
-    if (this.total == null) {
-      this.total = 0;
-    }
+    if (this.qt == null) this.qt = 0;
+    if (this.total == null) this.total = 0;
   }
+
+  ngOnInit() {}
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { BitcoinService } from "../bitcoin.service";
-import { BitcoinComponent } from "../bitcoin/bitcoin.component";
 import { TimerService } from "../timer.service";
 
 @Component({
@@ -14,7 +13,7 @@ export class NavbarComponent implements OnInit {
   }
 
   status() {
-    if (this.bitcoin.val != null) {
+    if (this.bitcoin.val !== null) {
       if (this.bitcoin.val) {
         return "Valor do bitcoin subiu :)";
       } else {

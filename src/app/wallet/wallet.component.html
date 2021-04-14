@@ -1,0 +1,14 @@
+<div class="container">
+  <h6>Total:</h6>
+  <p>{{this.total}}</p>
+
+  <h6>Quantidade de Bitcoin:</h6>
+  <p>{{this.qt}}</p>
+
+  <div>
+    <h6>Comprar acao</h6>
+    <input type="number" [(ngModel)]="acao" /><br />
+    <button (click)="buy()">Comprar</button>
+    <button (click)="sell()">Vender</button>
+  </div>
+</div>

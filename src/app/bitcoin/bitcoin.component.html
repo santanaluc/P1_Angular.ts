@@ -1,0 +1,13 @@
+<div class="container">
+  <h6>Dados:</h6>
+  <table border="1">
+    <tr>
+      <th>Valor Ação:</th>
+      <th>Data:</th>
+    </tr>
+    <tr *ngFor="let response of this.bitcoinService.updateList">
+      <td>R$ {{response.bpi.BRL.rate}}</td>
+      <td>{{response.time.updated}}</td>
+    </tr>
+  </table>
+</div>

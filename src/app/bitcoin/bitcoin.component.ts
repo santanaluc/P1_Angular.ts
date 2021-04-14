@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BitcoinService } from "../bitcoin.service";
+import { TimerService } from "../timer.service";
 
 @Component({
   selector: "app-bitcoin",
